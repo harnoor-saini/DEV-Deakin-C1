@@ -13,7 +13,7 @@ function Post() {
   const [descriptionError, setDescriptionError] = useState("");
   const [abstractError, setAbstractError] = useState("");
   const [articleTextError, setArticleTextError] = useState("");
-  const [tagsError, setTagsError] = useState("") ;
+  const [tagsError, setTagsError] = useState("");
 
   function handlePost() {
     let valid = true;
@@ -72,6 +72,12 @@ function Post() {
 
     if (valid) {
       alert("Your post has been sent successfully!");
+
+      setTitle("");
+      setDescription("");
+      setAbstract("");
+      setArticleText("");
+      setTags("");
     } else {
       alert("An error occurred. Please check the red messages and try again.");
     }
@@ -112,6 +118,7 @@ function Post() {
             <input
               type="text"
               placeholder="Start your question with how, what, why, etc."
+              value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
@@ -120,6 +127,7 @@ function Post() {
           <label className="post_label">Describe your problem</label>
           <textarea
             className="post_big_box"
+            value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
           {descriptionError && <p className="post_error">{descriptionError}</p>}
@@ -129,6 +137,7 @@ function Post() {
             <input
               type="text"
               placeholder="Please add up to 3 tags to describe what your question is about e.g., Java"
+              value={tags}
               onChange={(e) => setTags(e.target.value)}
             />
           </div>
@@ -143,6 +152,7 @@ function Post() {
             <input
               type="text"
               placeholder="Enter a descriptive title"
+              value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
@@ -152,6 +162,7 @@ function Post() {
           <textarea
             className="post_small_box"
             placeholder="Enter a 1-paragraph abstract"
+            value={abstract}
             onChange={(e) => setAbstract(e.target.value)}
           ></textarea>
           {abstractError && <p className="post_error">{abstractError}</p>}
@@ -160,6 +171,7 @@ function Post() {
           <textarea
             className="post_big_box"
             placeholder="Enter your article text"
+            value={articleText}
             onChange={(e) => setArticleText(e.target.value)}
           ></textarea>
           {articleTextError && <p className="post_error">{articleTextError}</p>}
@@ -169,6 +181,7 @@ function Post() {
             <input
               type="text"
               placeholder="Please add up to 3 tags to describe what your article is about e.g., Java"
+              value={tags}
               onChange={(e) => setTags(e.target.value)}
             />
           </div>
