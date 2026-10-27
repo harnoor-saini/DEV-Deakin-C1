@@ -1,7 +1,7 @@
 function AuthorInfo() {
   return (
     <div class="author_info">
-      <img src="/author_image.jpg" alt="author" class="author_image" />
+      <img src="Images/author_image.jpg" alt="author" class="author_image" />
       <p class="image_bio">
         I am a full-stack web developer based in Melbourne, Australia.
       </p>
